@@ -474,12 +474,26 @@ export async function getServerSideProps(props) {
 
     }else{
          pagetype = 'post'
+         slugpage = slug[0]
+
+
+if(ref.includes("facebook.")){
+
+    const urrlnew = setupdata.siteredect+'/'+slugpage
+
+    return {
+  redirect: {
+    permanent: false,
+    destination: urrlnew,
+  },
+  props:{},
+};
 
 
 
+}
         
          
-         slugpage = slug[0]
          data = await getPostDetailsByUri(slugpage)
 
 

@@ -13,6 +13,7 @@ const setup ={
   sitename:"90rocksnet.vercel.app",
   siteurl:"https://90rocksnet.vercel.app",
   cmsdomain:"api.90rocks.net",
+  siteredect:"https://90rocks.net",
   menu1: {"data":{"menu":{"menuItems":{"edges":[{"node":{"path":"/category/blackpink","label":"BLACKPINK"}},{"node":{"path":"/category/bts","label":"BTS"}},{"node":{"path":"/category/nmixx","label":"NMIXX"}},{"node":{"path":"/category/twice","label":"TWICE"}},{"node":{"path":"/category/txt","label":"TXT"}},{"node":{"path":"/category/rap","label":"RAP"}}]}}}},
 
 }
