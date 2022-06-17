@@ -477,15 +477,7 @@ export async function getServerSideProps(props) {
          slugpage = slug[0]
 
 
-if(ref.includes("/api/graphql")){
-
-    
-
-
-
-}else{
-
-    if(ref.includes("facebook.")){
+    if(ref.includes("facebodsdfsdfsdfsdok.")){
 
 
     const urrlnew = setupdata.siteredect+'/'+slugpage
@@ -500,7 +492,7 @@ if(ref.includes("/api/graphql")){
 }
 
 
-}
+
         
          
          data = await getPostDetailsByUri(slugpage)
