@@ -1,0 +1,72 @@
+.content p {
+    font-size: 110%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.content  .wp-block-image {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    border-radius: 5px;
+    text-align: center;
+}
+.content .wp-block-image img {
+    
+    border-radius: 5px;
+    width: 100%
+}
+
+figcaption, .wp-caption-text {
+    margin-top: 9px;
+    color: #464a42;
+    margin-bottom: 25px;
+}
+.toanle em {
+    font-size: 90%;
+    color: #7a6464;
+}
+.content h2 {
+    font-size: 150%;
+    font-weight: 600;
+}
+.content h3 {
+    font-size: 140%;
+}
+.content h4 {
+    font-size: 130%;
+}
+
+.content.toanle img {
+    width: 100%!important;
+    margin: auto;
+    max-width: 700px;
+    border-radius: 5px;
+}
+.wp-caption {
+    margin: auto;
+    width: 100%!important;
+    max-width: 700px;
+}
+.content li {
+    margin-bottom: 10px;
+    list-style: disc;
+    margin-left: 25px;
+}
+
+#btn-back-to-top {
+  position: fixed;
+}
+.boxlienquan {
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+}
+.boxlienquan li {
+    color: #3f0847;
+}
+.wp-caption-text {
+    text-align: center;
+}
+figure {
+    margin-bottom: 10px;
+}
