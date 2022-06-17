@@ -15,10 +15,12 @@ import Seodefault from '../components/seo-meta/seo-default'
 import NextNProgress from "nextjs-progressbar"
 
 
+
+
 import { getposthome,getpostcat,getalluriforseo,getPostDetailsByUri } from '../lib/api'
 
 
-function OtherPages({setup,data,page,pagetype,slugpage}) {
+function OtherPages({setup,data,page,pagetype,slugpage,refff}) {
 
     const router = useRouter()
 
@@ -112,7 +114,6 @@ if(pagetype==="category"){
 if(pagetype==="post"){
 
 
-return data
 
    
 
@@ -316,6 +317,8 @@ const jsonokiem = JSON.stringify(jsonokilfd)
 
       <Header menu={setup.menu1}/>
 
+      <div className="d">{refff}</div>
+
       <section className="mx-auto container px-4">
 
       <div className="flex flex-wrap -mx-4 -mb-4 md:mb-0">
@@ -429,11 +432,18 @@ const jsonokiem = JSON.stringify(jsonokilfd)
 
 
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(props) {
+
+
+     
+
+    const ref = props.req.headers.referer
+
+
 
     const setupdata = process.env.setup
 
-    const { params } = context
+    const { params } = props
     const { slug } = params
 
 
@@ -470,8 +480,7 @@ export async function getStaticProps(context) {
         
          
          slugpage = slug[0]
-         data = btoa(JSON.stringify(context))
-         //await getPostDetailsByUri(slugpage)
+         data = await getPostDetailsByUri(slugpage)
 
 
     }
@@ -485,25 +494,14 @@ export async function getStaticProps(context) {
             data: data,
             page: page,
             pagetype: pagetype,
-            slugpage:slugpage
-        },
-        revalidate: 15 //10 minutes
+            slugpage:slugpage,
+            refff:ref
+        }
     }
 }
 
 
 
-export async function getStaticPaths() {
-
-    const allUri = await getalluriforseo()
-
-
-
-    return {
-        paths: allUri,
-        fallback: true
-    }
-}
 
 
 export default OtherPages;

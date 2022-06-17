@@ -152,17 +152,13 @@ export default function privacy({setup,data}) {
 }
 
 
-export async function getStaticProps() {
-
-  
+export async function getServerSideProps(context) {
   const setupdata = process.env.setup
 
   return {
-    props: {
-      setup: setupdata,
-      
-    },
-    revalidate: 15 //10 minutes
+    props: {setup: setupdata}, // will be passed to the page component as props
   }
 }
+
+
 

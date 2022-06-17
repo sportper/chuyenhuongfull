@@ -40,6 +40,7 @@ module.exports = withPlugins(
     [withPWA, nextConfig],
   ],
   {
+  
   async rewrites() {
     return [  
       
