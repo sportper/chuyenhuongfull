@@ -24,7 +24,6 @@ export default function Home({setup,data,page,pagetype,slugpage}) {
       <meta property="og:title" content={setup.tieudehom}/>
       <meta property="og:description" content={setup.des_home}/>
       <meta property="og:url" content={setup.siteurl}/>
-      <meta property="og:image" content={`${setup.siteurl}/news-banner.jpeg`}/>
 
 
 

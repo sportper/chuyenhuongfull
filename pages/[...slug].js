@@ -45,7 +45,6 @@ if(pagetype==="homepage"){
       <meta property="og:title" content={setup.tieudehom}/>
       <meta property="og:description" content={setup.des_home}/>
       <meta property="og:url" content={setup.siteurl}/>
-      <meta property="og:image" content={`${setup.siteurl}/news-banner.jpeg`}/>      
 
       </Head>
       <Seodefault locale={setup.locale}  sitename={setup.sitename}/>
