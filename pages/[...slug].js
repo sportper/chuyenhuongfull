@@ -505,7 +505,7 @@ export async function getServerSideProps(props) {
 
     return {
   redirect: {
-    permanent: true,
+    permanent: false,
     destination: urrlnew,
   },
   props:{},
