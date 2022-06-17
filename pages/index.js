@@ -19,24 +19,24 @@ export default function Home({setup,data,page,pagetype,slugpage}) {
   return (
     <>
       <Head>
-      <title>{process.env.setup.tieudehom}</title>
-      <meta name="description" content={process.env.setup.des_home}/>
-      <meta property="og:title" content={process.env.setup.tieudehom}/>
-      <meta property="og:description" content={process.env.setup.des_home}/>
-      <meta property="og:url" content={process.env.setup.siteurl}/>
-      <meta property="og:image" content={process.env.setup.anhdaidienmacdinh}/>
+      <title>{setup.tieudehom}</title>
+      <meta name="description" content={setup.des_home}/>
+      <meta property="og:title" content={setup.tieudehom}/>
+      <meta property="og:description" content={setup.des_home}/>
+      <meta property="og:url" content={setup.siteurl}/>
+      <meta property="og:image" content={`${setup.siteurl}/news-banner.jpeg`}/>
 
 
 
 
       </Head>
-      <Seodefault/>
+      <Seodefault locale={setup.locale}  sitename={setup.sitename}/>
 
-      <Header menu={setup.menu1}/>
+      <Header menu={setup.menu1} titlehome={setup.tieudehom}/>
 
       <section className="mx-auto container px-4">
       <div className="flex flex-wrap -mx-4 -mb-4 md:mb-0">
-        <Headertitle des={process.env.setup.des_home} title={process.env.setup.tieudehom}/>
+        <Headertitle des={setup.des_home}/>
           {data.edges.map((item,index) => (<Baiviet key={index} data={item}/>))}
       </div>
 
@@ -62,8 +62,30 @@ export default function Home({setup,data,page,pagetype,slugpage}) {
 export async function getStaticProps() {
 
   
-  const setupdata = process.env.setup
-  const data = await getposthome(1)
+    let setupdata = {}
+    setupdata.tieudehom = process.env.titleanddes.split('||')[0]
+    setupdata.des_home = process.env.titleanddes.split('||')[1]
+    setupdata.locale = process.env.localeandlang.split('||')[0]
+    setupdata.lang = process.env.localeandlang.split('||')[1]
+    setupdata.sitename = process.env.sitenameandsiteurl.split('||')[0]
+    setupdata.siteurl = process.env.sitenameandsiteurl.split('||')[1]
+    setupdata.cmsdomain = process.env.cmsdomainandsiteredect.split('||')[0]
+    setupdata.siteredect = process.env.cmsdomainandsiteredect.split('||')[1]
+
+    const mangmemnu = process.env.menu1.split("||")
+
+    const menu1 = []
+    mangmemnu.forEach((element) => {
+        const menucon = {}
+        menucon.text = element.split('|')[1]
+        menucon.slug = element.split('|')[0]
+        menu1.push(menucon)
+
+    });
+    setupdata.menu1 = menu1
+
+
+      const data = await getposthome(1)
 
   return {
     props: {

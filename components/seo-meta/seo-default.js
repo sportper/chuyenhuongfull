@@ -2,11 +2,8 @@ import Link from 'next/link'
 import Head from "next/head"
 
 
-function Seodefault() {
-    const locale = process.env.setup.locale
-    const sitename = process.env.setup.sitename
-
-
+function Seodefault({locale,sitename}) {
+   
     return (
 
         <Head>

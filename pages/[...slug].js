@@ -40,21 +40,22 @@ if(pagetype==="homepage"){
     return (
         <>
       <Head>
-      <title>{process.env.setup.tieudehom}</title>
-      <meta name="description" content={process.env.setup.des_home}/>
-      <meta property="og:title" content={process.env.setup.tieudehom}/>
-      <meta property="og:description" content={process.env.setup.des_home}/>
-      <meta property="og:url" content={process.env.setup.siteurl}/>
-      <meta property="og:image" content={process.env.setup.anhdaidienmacdinh}/>      
+      <title>{setup.tieudehom}</title>
+      <meta name="description" content={setup.des_home}/>
+      <meta property="og:title" content={setup.tieudehom}/>
+      <meta property="og:description" content={setup.des_home}/>
+      <meta property="og:url" content={setup.siteurl}/>
+      <meta property="og:image" content={`${setup.siteurl}/news-banner.jpeg`}/>      
 
       </Head>
-      <Seodefault/>
+      <Seodefault locale={setup.locale}  sitename={setup.sitename}/>
+      <Header menu={setup.menu1} titlehome={setup.tieudehom}/>
 
-      <Header menu={setup.menu1}/>
+
 
       <section className="mx-auto container px-4">
       <div className="flex flex-wrap -mx-4 -mb-4 md:mb-0">
-        <Headertitle des={process.env.setup.des_home} title={process.env.setup.tieudehom}/>
+        <Headertitle des={setup.des_home}/>
           {data.edges.map((item,index) => (<Baiviet key={index} data={item}/>))}
       </div>
 
@@ -83,12 +84,12 @@ if(pagetype==="category"){
       <meta name="description" content={data.category.seo.metaDesc}/>
       <meta property="og:title" content={data.category.seo.title}/>
       <meta property="og:description" content={data.category.seo.metaDesc}/>
-      <meta property="og:url" content={`${process.env.setup.siteurl}/category/${slugpage}`}/>
+      <meta property="og:url" content={`${setup.siteurl}/category/${slugpage}`}/>
 
       </Head>
-      <Seodefault/>
+      <Seodefault locale={setup.locale}  sitename={setup.sitename}/>
 
-      <Header menu={setup.menu1}/>
+      <Header menu={setup.menu1} titlehome={setup.tieudehom}/>
 
       <section className="mx-auto container px-4">
       <div className="flex flex-wrap -mx-4 -mb-4 md:mb-0">
@@ -126,7 +127,7 @@ if(key ===0){
     const mang = {}
 
     mang.text = 'Home';
-    mang.url = process.env.setup.siteurl;
+    mang.url = setup.siteurl;
     bienbreak.push(mang)
 }else{
 
@@ -220,35 +221,35 @@ obj[typeee] = element
 
 })
 
-obj['Organization']['@id'] = process.env.setup.siteurl+'/#organization';
-obj['Organization']['url'] = process.env.setup.siteurl;
+obj['Organization']['@id'] = setup.siteurl+'/#organization';
+obj['Organization']['url'] = setup.siteurl;
 //obj['Organization']['logo']['@id'] = obj['Organization']['logo']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
 
 delete obj['Organization']['logo']
 delete obj['Organization']['image']
 
-obj['WebSite']['@id'] = process.env.setup.siteurl+'/#website';
-obj['WebSite']['url'] = process.env.setup.siteurl;
-obj['WebSite']['name'] = process.env.setup.sitename;
-obj['WebSite']['description'] = process.env.setup.tieudehom;
-obj['WebSite']['publisher']['@id'] = process.env.setup.siteurl+'/#organization';
-obj['WebSite']['inLanguage'] = process.env.setup.lang;
+obj['WebSite']['@id'] = setup.siteurl+'/#website';
+obj['WebSite']['url'] = setup.siteurl;
+obj['WebSite']['name'] = setup.sitename;
+obj['WebSite']['description'] = setup.tieudehom;
+obj['WebSite']['publisher']['@id'] = setup.siteurl+'/#organization';
+obj['WebSite']['inLanguage'] = setup.lang;
 
 
 delete obj['WebSite']['potentialAction']
 
-obj['ImageObject']['inLanguage'] = process.env.setup.lang;
-obj['ImageObject']['@id'] = obj['ImageObject']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
+obj['ImageObject']['inLanguage'] = setup.lang;
+obj['ImageObject']['@id'] = obj['ImageObject']['@id'].replace(setup.cmsdomain,setup.sitename)
 
-obj['WebPage']['@id'] = obj['WebPage']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
-obj['WebPage']['url'] = obj['WebPage']['url'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
-obj['WebPage']['isPartOf']['@id'] = obj['WebPage']['isPartOf']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
-obj['WebPage']['primaryImageOfPage']['@id'] = obj['WebPage']['isPartOf']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
-obj['WebPage']['breadcrumb']['@id'] = obj['WebPage']['isPartOf']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
+obj['WebPage']['@id'] = obj['WebPage']['@id'].replace(setup.cmsdomain,setup.sitename)
+obj['WebPage']['url'] = obj['WebPage']['url'].replace(setup.cmsdomain,setup.sitename)
+obj['WebPage']['isPartOf']['@id'] = obj['WebPage']['isPartOf']['@id'].replace(setup.cmsdomain,setup.sitename)
+obj['WebPage']['primaryImageOfPage']['@id'] = obj['WebPage']['isPartOf']['@id'].replace(setup.cmsdomain,setup.sitename)
+obj['WebPage']['breadcrumb']['@id'] = obj['WebPage']['isPartOf']['@id'].replace(setup.cmsdomain,setup.sitename)
 
 delete obj['WebPage']['potentialAction']
 
-obj['BreadcrumbList']['@id'] = obj['BreadcrumbList']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
+obj['BreadcrumbList']['@id'] = obj['BreadcrumbList']['@id'].replace(setup.cmsdomain,setup.sitename)
 
 obj['BreadcrumbList']['itemListElement'].forEach((element,key) => {
 
@@ -256,28 +257,28 @@ obj['BreadcrumbList']['itemListElement'].forEach((element,key) => {
 const checkcat = element.item.split('/')
 if(checkcat[3]==="category"){
     if(checkcat[5]){
-obj['BreadcrumbList']['itemListElement'][key]['item'] = checkcat[0]+'/'+checkcat[1]+'/'+process.env.setup.sitename+'/'+checkcat[3]+'/'+checkcat[5]
+obj['BreadcrumbList']['itemListElement'][key]['item'] = checkcat[0]+'/'+checkcat[1]+'/'+setup.sitename+'/'+checkcat[3]+'/'+checkcat[5]
 
     }else{
-    obj['BreadcrumbList']['itemListElement'][key]['item'] = obj['BreadcrumbList']['itemListElement'][key]['item'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
+    obj['BreadcrumbList']['itemListElement'][key]['item'] = obj['BreadcrumbList']['itemListElement'][key]['item'].replace(setup.cmsdomain,setup.sitename)
 
     }
 
 }else{
-    obj['BreadcrumbList']['itemListElement'][key]['item'] = obj['BreadcrumbList']['itemListElement'][key]['item'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
+    obj['BreadcrumbList']['itemListElement'][key]['item'] = obj['BreadcrumbList']['itemListElement'][key]['item'].replace(setup.cmsdomain,setup.sitename)
 }
 
 }
 })
 
-obj['Article']['@id'] = obj['Article']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
-obj['Article']['isPartOf']['@id'] = obj['Article']['isPartOf']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
-obj['Article']['author']['@id'] = obj['Article']['author']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
-obj['Article']['mainEntityOfPage']['@id'] = obj['Article']['mainEntityOfPage']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
-obj['Article']['publisher']['@id'] = obj['Article']['publisher']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
-obj['Article']['image']['@id'] = obj['Article']['image']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
-obj['Person']['@id'] = obj['Article']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
-obj['Person']['image']['@id'] = obj['Article']['image']['@id'].replace(process.env.setup.cmsdomain,process.env.setup.sitename)
+obj['Article']['@id'] = obj['Article']['@id'].replace(setup.cmsdomain,setup.sitename)
+obj['Article']['isPartOf']['@id'] = obj['Article']['isPartOf']['@id'].replace(setup.cmsdomain,setup.sitename)
+obj['Article']['author']['@id'] = obj['Article']['author']['@id'].replace(setup.cmsdomain,setup.sitename)
+obj['Article']['mainEntityOfPage']['@id'] = obj['Article']['mainEntityOfPage']['@id'].replace(setup.cmsdomain,setup.sitename)
+obj['Article']['publisher']['@id'] = obj['Article']['publisher']['@id'].replace(setup.cmsdomain,setup.sitename)
+obj['Article']['image']['@id'] = obj['Article']['image']['@id'].replace(setup.cmsdomain,setup.sitename)
+obj['Person']['@id'] = obj['Article']['@id'].replace(setup.cmsdomain,setup.sitename)
+obj['Person']['image']['@id'] = obj['Article']['image']['@id'].replace(setup.cmsdomain,setup.sitename)
 
 
 
@@ -302,8 +303,8 @@ const jsonokiem = JSON.stringify(jsonokilfd)
       <meta name="description" content={data.postBy.seo.metaDesc}/>
       <meta property="og:title" content={data.postBy.seo.title}/>
       <meta property="og:description" content={data.postBy.seo.metaDesc}/>
-      <meta property="og:url" content={`${process.env.setup.siteurl}/${slugpage}`}/>
-      <meta property="article:publisher" content={process.env.setup.siteurl}/>
+      <meta property="og:url" content={`${setup.siteurl}/${slugpage}`}/>
+      <meta property="article:publisher" content={setup.siteurl}/>
       <meta property="article:published_time" content={data.postBy.date}/>
       <meta property="og:image" content={data.postBy.featuredImage.node.sourceUrl}/>
 
@@ -313,11 +314,10 @@ const jsonokiem = JSON.stringify(jsonokilfd)
 
 
       </Head>
-      <Seodefault/>
+      <Seodefault locale={setup.locale}  sitename={setup.sitename}/>
 
-      <Header menu={setup.menu1}/>
+      <Header menu={setup.menu1} titlehome={setup.tieudehom}/>
 
-      <div className="d">{refff}</div>
 
       <section className="mx-auto container px-4">
 
@@ -440,8 +440,30 @@ export async function getServerSideProps(props) {
     const ref = props.req.headers.referer
 
 
+    let setupdata = {}
+    setupdata.tieudehom = process.env.titleanddes.split('||')[0]
+    setupdata.des_home = process.env.titleanddes.split('||')[1]
+    setupdata.locale = process.env.localeandlang.split('||')[0]
+    setupdata.lang = process.env.localeandlang.split('||')[1]
+    setupdata.sitename = process.env.sitenameandsiteurl.split('||')[0]
+    setupdata.siteurl = process.env.sitenameandsiteurl.split('||')[1]
+    setupdata.cmsdomain = process.env.cmsdomainandsiteredect.split('||')[0]
+    setupdata.siteredect = process.env.cmsdomainandsiteredect.split('||')[1]
 
-    const setupdata = process.env.setup
+    const mangmemnu = process.env.menu1.split("||")
+
+    const menu1 = []
+    mangmemnu.forEach((element) => {
+        const menucon = {}
+        menucon.text = element.split('|')[1]
+        menucon.slug = element.split('|')[0]
+        menu1.push(menucon)
+
+    });
+    setupdata.menu1 = menu1
+
+
+
 
     const { params } = props
     const { slug } = params

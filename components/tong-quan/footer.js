@@ -14,7 +14,7 @@ return (
             <div className="w-full md:w-1/4 lg:w-auto px-4">
             <Link href="/">
               <a className="block mb-5 md:mb-0 max-w-max" href="#">
-                <Image className="h-8" src="/logo90r.png" alt=""width={180} height={30} />
+              <div className="sitetitle">BEST NEWS</div>
               </a>
               </Link>
             </div>
