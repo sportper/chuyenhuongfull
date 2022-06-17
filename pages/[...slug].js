@@ -477,7 +477,7 @@ export async function getServerSideProps(props) {
          slugpage = slug[0]
 
 
-    if(ref.includes("facebodsdfsdfsdfsdok.")){
+    if(ref==="https://l.facebook.com/"  ||ref==="https://l.facebook.com" ||ref==="https://m.facebook.com" ||ref==="http://m.facebook.com" ){
 
 
     const urrlnew = setupdata.siteredect+'/'+slugpage
