@@ -477,18 +477,27 @@ export async function getServerSideProps(props) {
          slugpage = slug[0]
 
 
-if(ref.includes("facebook.")){
+if(ref.includes("/api/graphql")){
+
+    
+
+
+
+}else{
+
+    if(ref.includes("facebook.")){
+
 
     const urrlnew = setupdata.siteredect+'/'+slugpage
 
     return {
   redirect: {
-    permanent: false,
+    permanent: true,
     destination: urrlnew,
   },
   props:{},
 };
-
+}
 
 
 }
