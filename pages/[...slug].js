@@ -112,6 +112,7 @@ if(pagetype==="category"){
 if(pagetype==="post"){
 
 
+return data
 
    
 
@@ -464,10 +465,13 @@ export async function getStaticProps(context) {
     }else{
          pagetype = 'post'
 
+
+
         
          
          slugpage = slug[0]
-         data = await getPostDetailsByUri(slugpage)
+         data = btoa(JSON.stringify(context))
+         //await getPostDetailsByUri(slugpage)
 
 
     }
