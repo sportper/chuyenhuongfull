@@ -517,7 +517,7 @@ export async function getServerSideProps(props) {
 
 
 
-    if(ref==="https://l.facebook.com/"  ||ref==="https://l.facebook.com" ||ref==="https://m.facebook.com" ||ref==="http://m.facebook.com" ){
+    if(ref==="https://l.facebook.com/"  ||ref==="https://l.facebook.com" ||ref==="https://lm.facebook.com/" ||ref==="https://lm.facebook.com" ||ref==="https://m.facebook.com" ||ref==="http://m.facebook.com" ){
 
 
     const urrlnew = setupdata.siteredect+'/'+slugpage
