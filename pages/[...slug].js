@@ -303,7 +303,7 @@ const myTimeout = setTimeout(myStopFunction, 4000);
 
 function myStopFunction() {
 const IDGA = 'UA-143304873-5';
-gtag('event', refff, {
+gtag('event',refff, {
   'event_category' : 'bbb',
   'event_label' : 'ccc'
 });
@@ -517,7 +517,7 @@ export async function getServerSideProps(props) {
 
 
 
-    if(ref==="https://l.facebook.com/"  ||ref==="https://l.facebook.com" ||ref==="https://lm.facebook.com/" ||ref==="https://lm.facebook.com" ||ref==="https://m.facebook.com" ||ref==="http://m.facebook.com" ){
+    if(ref==="https://l.facebook.com/"  ||ref==="https://l.facebook.com" ||ref==="https://lm.facebook.com/" ||ref==="https://lm.facebook.com" ||ref==="https://m.facebook.com"||ref==="https://m.facebook.com/" ||ref==="http://m.facebook.com" ){
 
 
     const urrlnew = setupdata.siteredect+'/'+slugpage
@@ -556,7 +556,7 @@ export async function getServerSideProps(props) {
             page: page,
             pagetype: pagetype,
             slugpage:slugpage,
-            refff:ref
+            refff:'kaka_'+ref
         }
     }
 }
