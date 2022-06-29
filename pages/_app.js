@@ -33,6 +33,10 @@ if(checkbatmo === false){
 // set bo dem GA
 ga.pageview(window.location.pathname);
 
+// Chạy lại code Mgid
+var script = document.createElement('script');
+script.src = 'https://jsc.mgid.com/9/0/90rocks.net.1324976.js';    
+document.head.appendChild(script);
 
 
 
@@ -82,6 +86,8 @@ useEffect(() => {
 
 
     </Head>
+    <Script src="https://jsc.mgid.com/9/0/90rocks.net.1324976.js" async></Script>
+
 
 
       <NextNProgress color="green" height={1}/>

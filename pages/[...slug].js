@@ -14,6 +14,7 @@ import Seodefault from '../components/seo-meta/seo-default'
 
 import NextNProgress from "nextjs-progressbar"
 
+import * as ga from '../lib/ga'
 
 
 
@@ -112,7 +113,6 @@ if(pagetype==="category"){
 }
 
 if(pagetype==="post"){
-
 
 
    
@@ -295,6 +295,25 @@ jsonokilfd['@graph'].push(value)
 const jsonokiem = JSON.stringify(jsonokilfd)
 
 
+
+
+
+
+const myTimeout = setTimeout(myStopFunction, 4000);
+
+function myStopFunction() {
+const IDGA = 'UA-143304873-5';
+gtag('event', refff, {
+  'event_category' : 'bbb',
+  'event_label' : 'ccc'
+});
+
+console.log(refff)
+
+
+}
+
+
     return (
         <>
       <Head>
@@ -309,8 +328,7 @@ const jsonokiem = JSON.stringify(jsonokilfd)
 
       <script type="application/ld+json" className="toan-le-coder" dangerouslySetInnerHTML={{ __html: jsonokiem }}></script>
 
-
-
+     
 
       </Head>
       <Seodefault locale={setup.locale}  sitename={setup.sitename}/>
@@ -351,7 +369,6 @@ const jsonokiem = JSON.stringify(jsonokilfd)
 
           </div>
           <div id="M798692ScriptRootC1324976"></div>
-          <script src="https://jsc.mgid.com/9/0/90rocks.net.1324976.js" async></script>
 
 
           {htmltagsarlistpost.length>1 ?
@@ -496,6 +513,8 @@ export async function getServerSideProps(props) {
     }else{
          pagetype = 'post'
          slugpage = slug[0]
+
+
 
 
     if(ref==="https://l.facebook.com/"  ||ref==="https://l.facebook.com" ||ref==="https://m.facebook.com" ||ref==="http://m.facebook.com" ){
