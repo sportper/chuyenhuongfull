@@ -518,6 +518,12 @@ export async function getServerSideProps(props) {
          
          data = await getPostDetailsByUri(slugpage)
 
+           if(data.postBy==null){
+            return {
+     notFound: true,
+   }
+         }
+
 
     }
     

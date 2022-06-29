@@ -25,13 +25,7 @@ function Seodefault({locale,sitename}) {
             <meta name="twitter:card" content="summary_large_image" />
            
 
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143304873-5" dangerouslySetInnerHTML={{
-              __html: `window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'UA-143304873-5');`
-            }}/>
+            
             <script src="https://jsc.mgid.com/9/0/90rocks.net.1324978.js" async></script>
             
 
