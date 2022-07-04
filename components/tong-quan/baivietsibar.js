@@ -6,8 +6,13 @@ import Image from 'next/image'
 function Baivietsidebar({data}) {
 
 //return JSON.stringify(data)
+let linkanh
 
 const manganh = {}
+if(data.node.featuredImage === null){
+   linkanh = '/nothumb.jpeg';
+
+}else{
 
 {data.node.featuredImage.node.mediaDetails.sizes.map((itp)=>(
 
@@ -17,7 +22,6 @@ Object.assign(manganh, {[itp.name]: itp.sourceUrl})
 
 ))}
 
-let linkanh
 
 
 if(manganh.thumbnail){
@@ -31,8 +35,6 @@ if(manganh.thumbnail){
 
 }
 
-if(!linkanh){
-   linkanh = '/nothumb.jpeg';
 }
 
 return (

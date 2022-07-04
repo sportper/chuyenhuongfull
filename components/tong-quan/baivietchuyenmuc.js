@@ -6,9 +6,14 @@ import Image from 'next/image'
 function Baivietcm({data}) {
 
 //return JSON.stringify(data)
+let linkanh
 
 const manganh = {}
 
+if(data.featuredImage === null){
+   linkanh = '/nothumb.jpeg';
+
+}else{
 {data.featuredImage.node.mediaDetails.sizes.map((itp)=>(
 
 Object.assign(manganh, {[itp.name]: itp.sourceUrl})
@@ -17,7 +22,6 @@ Object.assign(manganh, {[itp.name]: itp.sourceUrl})
 
 ))}
 
-let linkanh
 
 
 if(manganh.thumbnail){
@@ -30,10 +34,9 @@ if(manganh.thumbnail){
    linkanh = data.featuredImage.sourceUrl;
 
 }
-
-if(!linkanh){
-   linkanh = '/nothumb.jpeg';
 }
+
+
 
 return (
     <div className="w-full md:w-1/2 px-4 mb-8 lg:w-1/2">
