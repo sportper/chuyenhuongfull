@@ -31,7 +31,9 @@ if(manganh.thumbnail){
 
 }
 
-
+if(!linkanh){
+   linkanh = '/nothumb.jpeg';
+}
 
 return (
     <div className="w-full px-4 mb-8">
