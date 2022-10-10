@@ -9,7 +9,6 @@ import Head from 'next/head'
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import * as ga from '../lib/ga'
 
 
 
@@ -19,7 +18,6 @@ function MyApp({ Component, pageProps }) {
 
 
 
-const IDGA = 'UA-143304873-5';
 const router = useRouter()
 
 function loadjswhenclicklink(){
@@ -29,14 +27,6 @@ let checkbatmo = document.querySelector('.navbar-menu').classList.contains('hidd
 if(checkbatmo === false){
   document.querySelector('.navbar-menu').classList.toggle('hidden');
 }
-
-// set bo dem GA
-ga.pageview(window.location.pathname);
-
-// Chạy lại code Mgid
-var script = document.createElement('script');
-script.src = 'https://jsc.mgid.com/9/0/90rocks.net.1324976.js';    
-document.head.appendChild(script);
 
 
 
@@ -65,28 +55,11 @@ useEffect(() => {
     <Head>
 
 
-      <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${IDGA}`}/>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${IDGA}', {
-          page_path: window.location.pathname,
-        });
-      `,
-        }}
-      />
-
 
 
 
 
     </Head>
-    <Script src="https://jsc.mgid.com/9/0/90rocks.net.1324976.js" async></Script>
 
 
 

@@ -299,19 +299,7 @@ const jsonokiem = JSON.stringify(jsonokilfd)
 
 
 
-const myTimeout = setTimeout(myStopFunction, 4000);
 
-function myStopFunction() {
-const IDGA = 'UA-143304873-5';
-gtag('event',refff, {
-  'event_category' : 'bbb',
-  'event_label' : 'ccc'
-});
-
-console.log(refff)
-
-
-}
 
 
     return (
@@ -368,7 +356,6 @@ console.log(refff)
           >
 
           </div>
-          <div id="M798692ScriptRootC1324976"></div>
 
 
           {htmltagsarlistpost.length>1 ?

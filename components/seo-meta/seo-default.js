@@ -26,7 +26,6 @@ function Seodefault({locale,sitename}) {
            
 
             
-            <script src="https://jsc.mgid.com/9/0/90rocks.net.1324978.js" async></script>
             
 
 
