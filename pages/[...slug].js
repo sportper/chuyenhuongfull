@@ -165,44 +165,6 @@ if(key ===0){
 
 
 
-let htmltagstitle = []
-let htmltagsarlistpost = []
-
-if(data.postBy.tags.nodes.length >0){
-
-data.postBy.tags.nodes.forEach((element,key) => {
-htmltagstitle.push(element.name)
-
-if(element.posts.nodes.length>0){
-
-    element.posts.nodes.forEach((element,key) => {
-htmltagsarlistpost.push(element)
-
-    })
-
-}
-
-
-
-
-});
-
-}
-
-let listpostincat = []
-data.postBy.categories.nodes.forEach((element,key) => {
-
-if(element.posts.nodes.length>0){
-
-element.posts.nodes.forEach((element,key) => {
-listpostincat.push(element)
-
-    })
-}
-})
-
-
-
   
    
 let mangjson = JSON.parse(data.postBy.seo.schema.raw)
@@ -358,32 +320,9 @@ const jsonokiem = JSON.stringify(jsonokilfd)
           </div>
 
 
-          {htmltagsarlistpost.length>1 ?
-
-          <div className="boxlienquan mb-10 w-full">
-
-          <h3 className="mb-3 font-heading">The post for tags <b>{htmltagstitle.map((item) => (item))}</b> you can like:</h3>
-          <ul>
-          {htmltagsarlistpost.map((item,key) => (<li key={key} className="flex mb-2 items-center"><h3 className="text-xl"><Link href={item.slug}>{item.title}</Link></h3></li>))}
-          </ul>
-          </div>
-          :''}
-
-          {listpostincat.length>1 ?
-
-          <h3 className="mb-3 text-3xl font-heading">Same category</h3>
-          :''}
-
-{listpostincat.length>1 ?
-            
-          <div className="flex flex-wrap -mx-4 -mb-4 md:mb-0">
-
+         
 
           
-          {listpostincat.map((item,key) => (<Baivietcm key={key} data={item}/>))}
-          
-          </div>
-          :''}
 
 
 
@@ -402,9 +341,7 @@ const jsonokiem = JSON.stringify(jsonokilfd)
         </div>
 
         <div className="w-full px-4 mb-4 md:mb-0 lg:w-1/3">
-        <h3 className="mb-4 text-xl md:text-3xl leading-tight text-darkCoolGray-900 font-bold tracking-tighter p-4 mt-10">News Post</h3>
 
-          {data.posts.edges.map((item,index) => (<Baivietsidebar key={index} data={item}/>))}
 
 
         
