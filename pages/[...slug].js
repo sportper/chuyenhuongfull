@@ -319,21 +319,11 @@ const jsonokiem = JSON.stringify(jsonokilfd)
 
           </div>
 
-
-         
-
-          
-
-
-
-
-            
-            
-
-
-
-
-
+ <div id="M748164ScriptRootC1396695"> 
+ </div> 
+ <script src="https://jsc.mgid.com/g/h/ghiennha.com.1396695.js" async> 
+ </script> 
+ 
 
 
         </div>
