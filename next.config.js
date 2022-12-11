@@ -8,7 +8,7 @@ const withPlugins = require('next-compose-plugins');
 const nextConfig = {
    
     images: {
-        domains: ['i0.wp.com',"api.90rocks.net","nbasport247.com","newsupdatess.info","nhadep99.com","kenhthoisu.net","danhgiachat.com","ghiennaunuong.com","ideassimple.com", '90rocks.net','secure.gravatar.com', 'babacricnews.s3.ap-south-1.amazonaws.com'],
+        domains: ["sportper.com","cdn.sportper.com",'i0.wp.com',"api.90rocks.net","nbasport247.com","newsupdatess.info","nhadep99.com","kenhthoisu.net","danhgiachat.com","ghiennaunuong.com","cdnimg.ideassimple.com","ideassimple.com", '90rocks.net','secure.gravatar.com', 'babacricnews.s3.ap-south-1.amazonaws.com'],
     },
     pwa: {
         dest: 'public',
