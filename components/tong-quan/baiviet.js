@@ -44,7 +44,7 @@ return (
     <div className="w-full md:w-1/2 px-4 mb-8 lg:w-1/3">
               <Link  href={data.node.uri}>
               <a>
-                <Image className="w-full block mb-6 overflow-hidden rounded-md" src={linkanh} alt="" height="225" width="400" />
+                <img className="w-full block mb-6 overflow-hidden rounded-md" src={linkanh} alt="" height="225" width="400" />
               </a>
               </Link>
               <p className="mb-2 text-coolGray-500">
