@@ -20,52 +20,11 @@ function MyApp({ Component, pageProps }) {
 
 const router = useRouter()
 
-function loadjswhenclicklink(){
-
-// batmomenu khi dang click ma chuyen trang
-let checkbatmo = document.querySelector('.navbar-menu').classList.contains('hidden');
-if(checkbatmo === false){
-  document.querySelector('.navbar-menu').classList.toggle('hidden');
-}
-
-
-
-
-
-}
-
-useEffect(() => {
-
-  router.events.on('routeChangeComplete', loadjswhenclicklink)
-  return () => {
-  router.events.off('routeChangeComplete', loadjswhenclicklink)
-  };
-}, [router.events]);
-
-
-
-
-
-
-
-   const unique_id = new Date().getTime();
 
   return (
     <>
-    <Head>
-
-
-
-
-
-
-    </Head>
-
-
-
-      <NextNProgress color="green" height={1}/>
-      <Component {...pageProps} />
-
+    <NextNProgress color="green" height={1}/>
+    <Component {...pageProps} />
     </>
   );
 }

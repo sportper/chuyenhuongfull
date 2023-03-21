@@ -72,5 +72,11 @@ figure {
 }
 .sitetitle {
     font-size: 150%;
+  
     font-weight: 500;
+}
+.withbytoan{
+    max-width: 800px;
+    display: block;
+    margin: auto;
 }

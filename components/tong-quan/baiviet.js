@@ -48,7 +48,7 @@ return (
               </a>
               </Link>
               <p className="mb-2 text-coolGray-500">
-              <Link href={`/category/${data.node.categories.nodes[0].slug}`}><a>{data.node.categories.nodes[0].name}</a></Link> • {data.node.date.slice(0,10)}</p>
+              <b>{data.node.categories.nodes[0].name}</b> • {data.node.date.slice(0,10)}</p>
               <Link  href={data.node.uri}><a className="inline-block mb-4 text-2xl leading-tight text-coolGray-800 hover:text-black">{data.node.title}</a></Link>
             </div>
 

@@ -19,18 +19,16 @@ export default function privacy({setup,data}) {
   return (
     <>
       <Head>
-      <title>Privacy {setup.tieudehom}</title>
+      <title>Privacy {setup.domainvc}</title>
       <meta name="description" content={setup.des_home}/>
-       <meta property="og:image" content={`${setup.siteurl}/news-banner.jpeg`}/>
 
 
 
 
       </Head>
-      <Seodefault locale={setup.locale}  sitename={setup.sitename}/>
+      <Seodefault  sitename={setup.domainvc}/>
 
 
-      <Header menu={setup.menu1} titlehome={setup.tieudehom}/>
 
       <section className="mx-auto container px-4">
       <div className="flex flex-wrap -mx-4 -mb-4 md:mb-0">
@@ -42,7 +40,7 @@ export default function privacy({setup,data}) {
 
 
 
-<p>Our website address is: {setup.siteurl}</p>
+<p>Our website address is: {setup.domainvc}</p>
 
 
 
@@ -155,26 +153,9 @@ export default function privacy({setup,data}) {
 
 export async function getServerSideProps(context) {
 let setupdata = {}
-    setupdata.tieudehom = process.env.titleanddes.split('||')[0]
-    setupdata.des_home = process.env.titleanddes.split('||')[1]
-    setupdata.locale = process.env.localeandlang.split('||')[0]
-    setupdata.lang = process.env.localeandlang.split('||')[1]
-    setupdata.sitename = process.env.sitenameandsiteurl.split('||')[0]
-    setupdata.siteurl = process.env.sitenameandsiteurl.split('||')[1]
-    setupdata.cmsdomain = process.env.cmsdomainandsiteredect.split('||')[0]
-    setupdata.siteredect = process.env.cmsdomainandsiteredect.split('||')[1]
+    setupdata.domain = process.env.domaingoc
+    setupdata.domainvc = process.env.domainvc
 
-    const mangmemnu = process.env.menu1.split("||")
-
-    const menu1 = []
-    mangmemnu.forEach((element) => {
-        const menucon = {}
-        menucon.text = element.split('|')[1]
-        menucon.slug = element.split('|')[0]
-        menu1.push(menucon)
-
-    });
-    setupdata.menu1 = menu1
   return {
     props: {setup: setupdata}, // will be passed to the page component as props
   }
