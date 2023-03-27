@@ -130,7 +130,6 @@ export async function getServerSideProps(props) {
     const { params } = props
     const { slug } = params
 
-
     
     let data
     let pagetype = 'post';
