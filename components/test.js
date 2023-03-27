@@ -4,7 +4,6 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
 
 
 
-
 export default function Phantrang() {
   return (
 
