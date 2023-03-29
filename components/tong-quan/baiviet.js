@@ -5,37 +5,17 @@ import Image from 'next/image'
 
 function Baiviet({data}) {
 
-//return JSON.stringify(data)
 
-//return JSON.stringify(data)
+
 let linkanh
 
-const manganh = {}
+
 if(data.node.featuredImage === null){
    linkanh = '/nothumb.jpeg';
 
 }else{
 
-{data.node.featuredImage.node.mediaDetails.sizes.map((itp)=>(
-
-Object.assign(manganh, {[itp.name]: itp.sourceUrl})
-
-
-
-))}
-
-
-
-if(manganh.thumbnail){
-   linkanh = manganh.thumbnail;
-
-}else if(manganh.medium_large){
-   linkanh = manganh.medium_large;
-
-}else{
-   linkanh = data.node.featuredImage.node.sourceUrl;
-
-}
+linkanh = data.node.featuredImage.node.sourceUrl;
 
 }
 
