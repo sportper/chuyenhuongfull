@@ -52,9 +52,6 @@ if(pagetype==="post"){
       <meta property="article:published_time" content={data.postBy.date}/>
       <meta property="og:image" content={anhdaidien}/>
 
-
-     
-
       </Head>
       <Seodefault  sitename={setup.domainvc}/>
 
