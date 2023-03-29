@@ -34,6 +34,13 @@ function OtherPages({setup,data,page,pagetype,slugpage,refff}) {
 
 if(pagetype==="post"){
 
+    if(data.postBy.fixgrap!="0"){
+       var  anhdaidien = data.postBy.fixgrap
+    }else{
+       var  anhdaidien = data.postBy.featuredImage.node.sourceUrl
+        
+    }
+
     return (
         <>
       <Head>
@@ -42,9 +49,8 @@ if(pagetype==="post"){
       <meta property="og:title" content={data.postBy.title}/>
       <meta property="og:description" content={data.postBy.excerpt.trim()}/>
       <meta property="og:url" content={`https://${setup.domainvc}.vercel.app/${slugpage}`}/>
-      <meta property="article:publisher" content={setup.domainvc}/>
       <meta property="article:published_time" content={data.postBy.date}/>
-      <meta property="og:image" content={data.postBy.featuredImage.node.sourceUrl}/>
+      <meta property="og:image" content={anhdaidien}/>
 
 
      
