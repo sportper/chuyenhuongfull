@@ -21,7 +21,7 @@ function Seodefault({locale,sitename}) {
 
             <meta property="og:locale" content="en_US"/>
             <meta property="og:type" content="article" />
-            <meta property="og:site_name" content={sitename+'.vercel.app'} />
+            <meta property="og:site_name" content={sitename} />
             <meta name="twitter:card" content="summary_large_image" />
            
 
