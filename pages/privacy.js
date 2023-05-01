@@ -153,8 +153,8 @@ export default function privacy({setup,data}) {
 
 export async function getServerSideProps(context) {
 let setupdata = {}
-    setupdata.domain = process.env.domaingoc
-    setupdata.domainvc = process.env.domainvc
+    setupdata.domain = process.env.dm
+    setupdata.domainvc = 'Blog News';
 
   return {
     props: {setup: setupdata}, // will be passed to the page component as props
