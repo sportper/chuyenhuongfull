@@ -48,7 +48,7 @@ if(pagetype==="post"){
       <meta name="description" content={data.postBy.excerpt.trim()}/>
       <meta property="og:title" content={data.postBy.title}/>
       <meta property="og:description" content={data.postBy.excerpt.trim()}/>
-      <meta property="og:url" content={`https://${setup.domainvc}.vercel.app/${slugpage}`}/>
+      <meta property="og:url" content={`https://${setup.domainvc}/${slugpage}`}/>
       <meta property="article:published_time" content={data.postBy.date}/>
       <meta property="og:image" content={anhdaidien}/>
 
@@ -127,8 +127,8 @@ export async function getServerSideProps(props) {
 
 
     let setupdata = {}
-    setupdata.domain = process.env.domaingoc
-    setupdata.domainvc = process.env.domainvc
+    setupdata.domain = process.env.dm
+    setupdata.domainvc = props.req.headers.host
 
     const { params } = props
     const { slug } = params
@@ -137,7 +137,7 @@ export async function getServerSideProps(props) {
     let data
     let pagetype = 'post';
     let slugpage = slug[0];
-    const urrlnew = 'https://'+process.env.domaingoc+'/'+encodeURI(slugpage);
+    const urrlnew = 'https://'+process.env.dm+'/'+encodeURI(slugpage);
 
 
 
