@@ -54,8 +54,8 @@ export async function getStaticProps() {
 
   
     let setupdata = {}
-    setupdata.domain = process.env.domaingoc;
-    setupdata.domainvc = process.env.domainvc;
+    setupdata.domain = process.env.dm;
+    setupdata.domainvc = 'Blog News';
    
 
 
