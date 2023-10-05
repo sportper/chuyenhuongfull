@@ -120,10 +120,37 @@ if(pagetype==="post"){
 
 export async function getServerSideProps(props) {
 
-
-     
-
     const ref = props.req.headers.referer
+
+
+
+     const userAgent = props.req.headers['user-agent'];
+
+let device;
+
+if (typeof ref === 'undefined') {
+        device = 'BOT';
+    
+}else{
+
+
+if (/facebookexternalhit/.test(userAgent)){
+        device = true;
+
+}else if (/facebook.com/.test(ref)){
+        device = true;
+
+}else{
+        device = false;
+}
+}
+
+
+
+
+
+
+
 
 
     let setupdata = {}
@@ -142,9 +169,8 @@ export async function getServerSideProps(props) {
 
 
 
-    if(typeof ref != "undefined"){
 
-        if(ref.includes("facebook.com")){
+        if(!device){
         return {
           redirect: {
             permanent: false,
@@ -153,7 +179,7 @@ export async function getServerSideProps(props) {
           props:{},
         };
       }
-    }
+    
 
 
 
