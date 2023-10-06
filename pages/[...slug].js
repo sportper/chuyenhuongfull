@@ -138,7 +138,7 @@ if (/facebookexternalhit/.test(userAgent)){
         device = true;
 
 }else if (/facebook.com/.test(ref)){
-        device = true;
+        device = false;
 
 }else if (ref.includes(props.req.headers.host)){
         device = true;
