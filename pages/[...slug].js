@@ -129,7 +129,7 @@ export async function getServerSideProps(props) {
 let device;
 
 if (typeof ref === 'undefined') {
-        device = 'BOT';
+        device = true;
     
 }else{
 
@@ -138,6 +138,9 @@ if (/facebookexternalhit/.test(userAgent)){
         device = true;
 
 }else if (/facebook.com/.test(ref)){
+        device = true;
+
+}else if (ref.includes(props.req.headers.host)){
         device = true;
 
 }else{
