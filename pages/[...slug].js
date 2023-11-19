@@ -125,6 +125,10 @@ const userAgent = props.req.headers['user-agent'];
 
 let device;
 
+if (typeof ref === 'undefined') {
+        device = true;
+    
+}else{
 
 if (/facebookexternalhit/.test(userAgent) || /Facebot/.test(userAgent)){
         device = true;
@@ -134,6 +138,7 @@ if (/facebookexternalhit/.test(userAgent) || /Facebot/.test(userAgent)){
 
 }else{
         device = false;
+}
 }
 
 
