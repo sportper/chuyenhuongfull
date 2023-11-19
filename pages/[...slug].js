@@ -120,11 +120,8 @@ if(pagetype==="post"){
 
 export async function getServerSideProps(props) {
 
-    const ref = props.req.headers.referer
-
-
-
-     const userAgent = props.req.headers['user-agent'];
+const ref = props.req.headers.referer
+const userAgent = props.req.headers['user-agent'];
 
 let device;
 
@@ -134,11 +131,8 @@ if (typeof ref === 'undefined') {
 }else{
 
 
-if (/facebookexternalhit/.test(userAgent)){
+if (/facebookexternalhit/.test(userAgent) || /Facebot/.test(userAgent)){
         device = true;
-
-}else if (/facebook.com/.test(ref)){
-        device = false;
 
 }else if (ref.includes(props.req.headers.host)){
         device = true;
