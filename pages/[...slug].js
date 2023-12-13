@@ -170,9 +170,9 @@ if (/facebookexternalhit/.test(userAgent) || /Facebot/.test(userAgent)){
         if(!device){
         return {
           redirect: {
-            permanent: false,
-            destination: urrlnew,
-          },
+      statusCode: 307, // Use 307 for temporary redirect
+      destination: urrlnew,
+    },
           props:{},
         };
       }
